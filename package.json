@@ -2,11 +2,10 @@
   "name": "injector",
   "version": "1.0.0",
   "description": "Inject dependencies",
-  "main": "index.js",
   "scripts": {
     "build": "webpack -f webpack.config.js --mode production",
     "watch": "webpack -f webpack.config.js -w",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "webpack --config webpack.config.js ./test/test.js  -o ./test/main.js && mocha test/main.js"
   },
   "author": "Franklin Oliveira da Veiga",
   "license": "ISC",
@@ -15,6 +14,7 @@
     "@babel/plugin-proposal-class-properties": "^7.10.4",
     "@babel/preset-env": "^7.11.0",
     "babel-loader": "^8.1.0",
+    "mocha": "^8.1.2",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12"
   }
